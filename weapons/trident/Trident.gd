@@ -1,6 +1,8 @@
 extends Position2D
 
+
 export var knock_back_force := 15.0
+export var hit_delay := 0.15
 
 
 func _unhandled_key_input(event: InputEventKey) -> void:
@@ -13,6 +15,13 @@ func _unhandled_key_input(event: InputEventKey) -> void:
 	elif event.is_action_pressed("move_right") and rotation_degrees != -270:
 		rotation_degrees = -270
 
+
 func _on_Area2D_body_entered(body: PhysicsBody2D) -> void:
-	#TODO: Hit 
-	pass # Replace with function body.
+	if body is Person:
+		var direction := (body.global_position - global_position).normalized()
+		if abs(direction.x) > abs(direction.y):
+			direction.y = 0
+		else:
+			direction.x = 0
+		body.hit(direction, knock_back_force)
+	
