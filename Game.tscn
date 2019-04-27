@@ -5,5 +5,9 @@
 [node name="Game" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 295, 150 )
+position = Vector2( 110, 55 )
+
+[node name="Camera" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
 
