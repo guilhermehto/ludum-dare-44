@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://persons/Person.tscn" type="PackedScene" id=2]
+
+[node name="TestLevel" instance=ExtResource( 1 )]
+persons_to_punish = 5
+
+[node name="Person" parent="Persons" index="0" instance=ExtResource( 2 )]
+position = Vector2( 24, 28 )
+
+[node name="Person2" parent="Persons" index="1" instance=ExtResource( 2 )]
+position = Vector2( 35, 57 )
+
+[node name="Person3" parent="Persons" index="2" instance=ExtResource( 2 )]
+position = Vector2( 107, 55 )
+
+[node name="Person4" parent="Persons" index="3" instance=ExtResource( 2 )]
+position = Vector2( 105, 33 )
+
+[node name="Person5" parent="Persons" index="4" instance=ExtResource( 2 )]
+position = Vector2( 142, 25 )
+
+[node name="Person6" parent="Persons" index="5" instance=ExtResource( 2 )]
+position = Vector2( 129, 57 )
+
+[node name="Person7" parent="Persons" index="6" instance=ExtResource( 2 )]
+position = Vector2( 93, 23 )
+
+[node name="Person8" parent="Persons" index="7" instance=ExtResource( 2 )]
+position = Vector2( 51, 20 )
+
+[node name="Person9" parent="Persons" index="8" instance=ExtResource( 2 )]
+position = Vector2( 53, 59 )
+
+[node name="Person10" parent="Persons" index="9" instance=ExtResource( 2 )]
+position = Vector2( 92, 54 )
+

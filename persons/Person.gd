@@ -1,6 +1,8 @@
 extends KinematicBody2D
 class_name Person
 
+signal punished
+
 onready var animation_player : AnimationPlayer = $AnimationPlayer
 onready var raycast : RayCast2D = $RayCast2D
 
@@ -18,9 +20,7 @@ var look_for_target := false
 
 
 func _ready() -> void:
-	player = $"../Player"
 	randomize()
-#	target = _get_new_target()
 	target = yield(get_new_target(), "completed")
 	
 
@@ -64,6 +64,7 @@ func hit(direction: Vector2, force: float) -> void:
 	animation_player.play("hit")
 	hits_to_die -= 1
 	if hits_to_die == 0:
+		emit_signal("punished")
 		self.state = States.DEAD
 
 
