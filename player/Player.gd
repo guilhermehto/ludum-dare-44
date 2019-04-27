@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+class_name Player
 
 export var move_speed := 25.0
 

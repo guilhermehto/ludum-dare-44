@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Person",
 "language": "GDScript",
 "path": "res://persons/Person.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://player/Player.gd"
 } ]
 _global_script_class_icons={
-"Person": ""
+"Person": "",
+"Player": ""
 }
 
 [application]
@@ -23,6 +29,10 @@ _global_script_class_icons={
 config/name="Ludum Dare 44"
 run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Utils="*res://utils/Utils.gd"
 
 [display]
 
