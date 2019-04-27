@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/temp-player.png" type="Texture" id=2]
 [ext_resource path="res://weapons/trident/Trident.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player/hook/Hook.tscn" type="PackedScene" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -29,4 +30,6 @@ shape = SubResource( 2 )
 
 [node name="Trident" parent="." instance=ExtResource( 3 )]
 position = Vector2( -2, 2 )
+
+[node name="Hook" parent="." instance=ExtResource( 4 )]
 
