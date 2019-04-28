@@ -65,9 +65,11 @@ func hit(direction: Vector2, force: float) -> void:
 	animation_player.play("hit")
 	hits_to_die -= 1
 	if hits_to_die == 0:
+		GlobalEvents.emit_signal("shake_requested", 0.3, 6.0)
 		emit_signal("punished")
 		self.state = States.DEAD
-		
+		return
+	GlobalEvents.emit_signal("shake_requested")
 
 
 func initialize(_player: Player) -> void:

@@ -33,6 +33,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Utils="*res://utils/Utils.gd"
+GlobalEvents="*res://statics/GlobalEvents.gd"
 
 [display]
 
