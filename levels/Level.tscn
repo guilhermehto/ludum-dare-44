@@ -12,6 +12,9 @@ level_time = 65.0
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="ComboTimer" type="Timer" parent="."]
+one_shot = true
+
 [node name="Spawners" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -25,4 +28,7 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 
 [node name="UI" parent="." instance=ExtResource( 4 )]
 
+[connection signal="combo_ended" from="." to="UI" method="_on_Level_combo_ended"]
+[connection signal="comboed" from="." to="UI" method="_on_Level_comboed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="ComboTimer" to="." method="_on_ComboTimer_timeout"]
