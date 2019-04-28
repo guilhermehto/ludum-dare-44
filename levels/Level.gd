@@ -25,7 +25,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	time_since_last_punishment += delta
-	
 
 
 func _on_Timer_timeout() -> void:
