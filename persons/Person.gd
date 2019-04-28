@@ -4,6 +4,7 @@ class_name Person
 signal punished
 
 onready var animation_player : AnimationPlayer = $AnimationPlayer
+onready var animated_sprite : AnimatedSprite = $AnimatedSprite
 onready var raycast : RayCast2D = $RayCast2D
 
 enum States { IDLE, RUNNING, DEAD }
@@ -29,6 +30,7 @@ func _physics_process(delta: float) -> void:
 	if not active:
 		return
 	direction = (target - position).normalized()
+	animated_sprite.flip_h = direction.x < 0
 	match state:
 		States.IDLE:
 			move_and_slide(move_speed * 0.75 * direction)
