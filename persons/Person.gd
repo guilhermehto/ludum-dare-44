@@ -22,7 +22,6 @@ var active := false setget set_active
 
 func _ready() -> void:
 	randomize()
-	target = yield(get_new_target(), "completed")
 	set_physics_process(false)
 
 
@@ -88,3 +87,5 @@ func set_state(value) -> void:
 func set_active(value: bool) -> void:
 	active = value
 	set_physics_process(value)
+	if active:
+		target = yield(get_new_target(), "completed")
