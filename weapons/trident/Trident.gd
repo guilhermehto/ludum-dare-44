@@ -17,7 +17,7 @@ func _unhandled_key_input(event: InputEventKey) -> void:
 
 
 func _on_Area2D_body_entered(body: PhysicsBody2D) -> void:
-	if body is Person:
+	if body is Person and body.active:
 		var direction := (body.global_position - global_position).normalized().round()
 		direction = Utils.vec2_biggest_between_x_y(direction)
 		body.hit(direction, knock_back_force)
