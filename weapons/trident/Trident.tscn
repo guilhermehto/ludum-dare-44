@@ -13,10 +13,13 @@ knock_back_force = 500.0
 hit_delay = 0.01
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 4, 0.5 )
+rotation = -4.71238
 texture = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 0, -3 )
+editor/display_folded = true
+position = Vector2( 8, 2.90871e-05 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
