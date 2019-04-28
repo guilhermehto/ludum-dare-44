@@ -62,6 +62,7 @@ func get_new_target(away_from_player: bool = false):
 func hit(direction: Vector2, force: float) -> void:
 	target = yield(get_new_target(), "completed")
 	move_and_slide(direction * force)
+	GlobalEffects.frame_freeze()
 	animation_player.play("hit")
 	hits_to_die -= 1
 	if hits_to_die == 0:
