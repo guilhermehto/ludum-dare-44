@@ -9,31 +9,31 @@ persons_to_punish = 50
 
 [node name="Spawner" parent="Spawners" index="0" instance=ExtResource( 2 )]
 position = Vector2( 27, 18 )
-max_spawn_count = 2
+max_spawn_count = 1
 
 [node name="Spawner2" parent="Spawners" index="1" instance=ExtResource( 2 )]
 position = Vector2( 25, 52 )
-max_spawn_count = 2
+max_spawn_count = 1
 
 [node name="Spawner3" parent="Spawners" index="2" instance=ExtResource( 2 )]
 position = Vector2( 48, 65 )
-max_spawn_count = 2
+max_spawn_count = 1
 
 [node name="Spawner4" parent="Spawners" index="3" instance=ExtResource( 2 )]
 position = Vector2( 93, 64 )
-max_spawn_count = 2
+max_spawn_count = 1
 
 [node name="Spawner5" parent="Spawners" index="4" instance=ExtResource( 2 )]
 position = Vector2( 113, 48 )
-max_spawn_count = 2
+max_spawn_count = 1
 
 [node name="Spawner6" parent="Spawners" index="5" instance=ExtResource( 2 )]
 position = Vector2( 98, 25 )
-max_spawn_count = 2
+max_spawn_count = 1
 
 [node name="Spawner7" parent="Spawners" index="6" instance=ExtResource( 2 )]
 position = Vector2( 136, 23 )
-max_spawn_count = 2
+max_spawn_count = 1
 
 [node name="TileMap" parent="." index="3"]
 z_index = -1

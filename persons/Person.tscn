@@ -52,3 +52,5 @@ anims/hit = SubResource( 3 )
 enabled = true
 cast_to = Vector2( 0, 10 )
 
+[node name="Tween" type="Tween" parent="."]
+

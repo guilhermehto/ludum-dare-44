@@ -6,6 +6,7 @@ signal punished
 onready var animation_player : AnimationPlayer = $AnimationPlayer
 onready var animated_sprite : AnimatedSprite = $AnimatedSprite
 onready var raycast : RayCast2D = $RayCast2D
+onready var tween : Tween = $Tween
 
 enum States { IDLE, RUNNING, DEAD }
 
@@ -66,7 +67,7 @@ func hit(direction: Vector2, force: float) -> void:
 	if hits_to_die == 0:
 		emit_signal("punished")
 		self.state = States.DEAD
-		queue_free()
+		
 
 
 func initialize(_player: Player) -> void:
@@ -84,6 +85,23 @@ func set_state(value) -> void:
 			set_process(false)
 			set_physics_process(false)
 			$CollisionShape2D.queue_free()
+			tween.interpolate_property(self,
+				"global_position",
+				global_position,
+				global_position + Vector2.DOWN * 100.0,
+				0.75,
+				Tween.TRANS_BACK,
+				Tween.EASE_IN)
+			tween.interpolate_property(self,
+				"scale",
+				scale,
+				Vector2(0, 0),
+				0.75,
+				Tween.TRANS_CUBIC,
+				Tween.EASE_IN)
+			tween.start()
+			yield(tween, "tween_completed")
+			queue_free()
 
 
 func set_active(value: bool) -> void:
