@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://levels/spawner/Spawner.gd" type="Script" id=1]
+[ext_resource path="res://persons/Person.tscn" type="PackedScene" id=2]
+
+[node name="Spawner" type="Position2D"]
+script = ExtResource( 1 )
+persons = [ ExtResource( 2 ) ]
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

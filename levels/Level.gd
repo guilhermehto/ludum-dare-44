@@ -5,7 +5,7 @@ signal failed
 
 onready var timer : Timer = $Timer
 onready var player : Player = $Player
-onready var persons : Node2D = $Persons
+onready var spawners : Node2D = $Spawners
 
 export var level_time := 60.0
 export var persons_to_punish := 27
@@ -17,9 +17,8 @@ var time_since_last_punishment := 0
 func _ready() -> void:
 	timer.wait_time = level_time
 	timer.start()
-	for person in persons.get_children():
-		person.initialize(player)
-		person.connect("punished", self, "_on_Person_punished")
+	for spawner in spawners.get_children():
+		spawner.connect("spawned", self, "_on_Spawner_spawned")
 
 
 func _process(delta: float) -> void:
@@ -36,3 +35,8 @@ func _on_Person_punished() -> void:
 	if punished_persons == persons_to_punish:
 		emit_signal("won")
 		timer.stop()
+
+
+func _on_Spawner_spawned(person) -> void:
+		person.initialize(player)
+		person.connect("punished", self, "_on_Person_punished")

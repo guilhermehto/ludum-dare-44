@@ -17,19 +17,18 @@ var state = States.IDLE setget set_state
 var direction := Vector2()
 var target := Vector2()
 var look_for_target := false
+var active := false setget set_active
 
 
 func _ready() -> void:
 	randomize()
 	target = yield(get_new_target(), "completed")
-	
+	set_physics_process(false)
 
-
-func _process(delta: float) -> void:
-	pass
-	
 
 func _physics_process(delta: float) -> void:
+	if not active:
+		return
 	direction = (target - position).normalized()
 	match state:
 		States.IDLE:
@@ -66,6 +65,7 @@ func hit(direction: Vector2, force: float) -> void:
 	if hits_to_die == 0:
 		emit_signal("punished")
 		self.state = States.DEAD
+		queue_free()
 
 
 func initialize(_player: Player) -> void:
@@ -83,3 +83,8 @@ func set_state(value) -> void:
 			set_process(false)
 			set_physics_process(false)
 			$CollisionShape2D.queue_free()
+
+
+func set_active(value: bool) -> void:
+	active = value
+	set_physics_process(value)
