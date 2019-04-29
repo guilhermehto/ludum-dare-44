@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Control",
+"class": "MainMenu",
+"language": "GDScript",
+"path": "res://interface/MainMenu.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Person",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://player/Player.gd"
 } ]
 _global_script_class_icons={
+"MainMenu": "",
 "Person": "",
 "Player": ""
 }
@@ -27,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Ludum Dare 44"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://interface/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
