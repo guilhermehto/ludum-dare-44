@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 
 [node name="Panel" type="ColorRect" parent="Control"]
 margin_right = 160.0
-margin_bottom = 16.0
+margin_bottom = 18.0
 color = Color( 0.145098, 0.145098, 0.145098, 1 )
 
 [node name="Punished" type="Label" parent="Control/Panel"]

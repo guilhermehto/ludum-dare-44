@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dirt-arena.png-f2b7855838723b1980f54147f294d3e4.stex"
+path="res://.import/arena-1-tilesheet.png-6d6cf67b301a73d2ea7f620a07161131.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/arenas/dirt-arena.png"
-dest_files=[ "res://.import/dirt-arena.png-f2b7855838723b1980f54147f294d3e4.stex" ]
+source_file="res://assets/sprites/arenas/arena-1-tilesheet.png"
+dest_files=[ "res://.import/arena-1-tilesheet.png-6d6cf67b301a73d2ea7f620a07161131.stex" ]
 
 [params]
 
