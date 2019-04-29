@@ -17,6 +17,7 @@ var punished_goal := 0
 var punished_count := 0 setget set_punished_count
 var time_since_last_punishment := 0.0
 
+
 func _process(delta: float) -> void:
 	level_time -= delta
 	set_time_text(level_time)
