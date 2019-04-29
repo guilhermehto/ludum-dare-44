@@ -6,6 +6,7 @@
 [node name="Spawner" type="Position2D"]
 script = ExtResource( 1 )
 persons = [ ExtResource( 2 ) ]
+max_spawn_count = 2
 
 [node name="Tween" type="Tween" parent="."]
 
