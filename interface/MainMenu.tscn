@@ -1,32 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://interface/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/devil/devil-face-happy.png" type="Texture" id=2]
 [ext_resource path="res://interface/fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://interface/fonts/press_start.tres" type="DynamicFont" id=4]
 [ext_resource path="res://interface/MenuOption.gd" type="Script" id=5]
-[ext_resource path="res://assets/sprites/trident.png" type="Texture" id=6]
+[ext_resource path="res://interface/SelectionArrow.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 8
 font_data = ExtResource( 3 )
-
-[sub_resource type="Animation" id=2]
-resource_name = "wiggle"
-length = 0.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("TextureRect:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6 ),
-"transitions": PoolRealArray( 1, 0.406126, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 6, 0 ), Vector2( 0, 0 ) ]
-}
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -94,7 +77,7 @@ path = "res://Game.tscn"
 
 [node name="Quit" type="Label" parent="Options"]
 margin_top = 23.0
-margin_right = 32.0
+margin_right = 40.0
 margin_bottom = 31.0
 custom_fonts/font = ExtResource( 4 )
 text = "QUIT"
@@ -119,19 +102,5 @@ text = "@datOliveira @rhildebrandt94 - #LDJAM44"
 align = 1
 valign = 1
 
-[node name="SelectionArrow" type="Control" parent="."]
-editor/display_folded = true
-margin_right = 40.0
-margin_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="SelectionArrow"]
-margin_right = 8.0
-margin_bottom = 8.0
-rect_rotation = 89.9999
-rect_pivot_offset = Vector2( 4, 4 )
-texture = ExtResource( 6 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SelectionArrow"]
-autoplay = "wiggle"
-anims/wiggle = SubResource( 2 )
+[node name="SelectionArrow" parent="." instance=ExtResource( 6 )]
 

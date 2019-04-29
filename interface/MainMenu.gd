@@ -2,7 +2,7 @@
 extends Control
 class_name MainMenu
 
-export var arrow_offet : Vector2 = Vector2(-15, 0)
+export var arrow_offset : Vector2 = Vector2(-15, 0)
 
 onready var buttons_container : VBoxContainer = $Options
 onready var selection_arrow : Control = $SelectionArrow
@@ -66,4 +66,4 @@ func _move_arrow() -> void:
 #	yield(tween, 'tween_completed')
 
 func _get_arrow_position(button_index : int = 0) -> Vector2:
-	return Vector2(buttons[button_index].get_global_rect().position.x + arrow_offet.x, buttons[button_index].get_global_rect().position.y + arrow_offet.y)
+	return Vector2(buttons[button_index].get_global_rect().position.x + arrow_offset.x, buttons[button_index].get_global_rect().position.y + arrow_offset.y)
