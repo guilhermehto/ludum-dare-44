@@ -16,7 +16,6 @@ export var persons_to_punish := 27
 export var combo_breaker_time := 1.25
 
 var punished_persons := 0.0
-var time_since_last_punishment := 0
 var combo := 0
 
 
@@ -29,16 +28,12 @@ func _ready() -> void:
 		spawner.connect("spawned", self, "_on_Spawner_spawned")
 
 
-func _process(delta: float) -> void:
-	time_since_last_punishment += delta
-
 
 func _on_Timer_timeout() -> void:
 	emit_signal("failed")
 
 
 func _on_Person_punished() -> void:
-	time_since_last_punishment = 0
 	combo += 1
 	if combo > 1:
 		emit_signal("comboed", combo)
