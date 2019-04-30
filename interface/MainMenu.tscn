@@ -16,6 +16,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.188235, 0.203922, 0.207843, 1 )
+
 [node name="Title" type="HBoxContainer" parent="."]
 editor/display_folded = true
 anchor_left = 0.5

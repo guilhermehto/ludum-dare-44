@@ -5,7 +5,6 @@
 [ext_resource path="res://interface/SelectionArrow.tscn" type="PackedScene" id=3]
 
 [node name="TransitionMenu" type="CanvasLayer"]
-editor/display_folded = true
 layer = 2
 script = ExtResource( 1 )
 
@@ -73,8 +72,7 @@ text = "Next"
 align = 1
 valign = 1
 
-[node name="SelectionArrow" type="Control" parent="Container" instance=ExtResource( 3 )]
-editor/display_folded = true
+[node name="SelectionArrow" parent="Container" instance=ExtResource( 3 )]
 
 [node name="Tween" type="Tween" parent="."]
 

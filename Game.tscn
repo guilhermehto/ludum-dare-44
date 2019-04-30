@@ -1,30 +1,32 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://levels/Level1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/Level2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://levels/Level3.tscn" type="PackedScene" id=4]
 [ext_resource path="res://levels/Level4.tscn" type="PackedScene" id=5]
-[ext_resource path="res://GameCamera.gd" type="Script" id=6]
-[ext_resource path="res://interface/transition-menu/TransitionMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://interface/EndGameScreen.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GameCamera.gd" type="Script" id=7]
+[ext_resource path="res://interface/transition-menu/TransitionMenu.tscn" type="PackedScene" id=8]
 
 [node name="Game" type="Node"]
 script = ExtResource( 1 )
 levels = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ]
+end_game_menu = ExtResource( 6 )
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2( -1, 0 )
 current = true
 limit_left = 0
 limit_top = 0
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="Timer" type="Timer" parent="Camera"]
 one_shot = true
 
 [node name="OngoingLevel" type="Node" parent="."]
 
-[node name="TransitionMenu" parent="." instance=ExtResource( 7 )]
+[node name="TransitionMenu" parent="." instance=ExtResource( 8 )]
 
 [connection signal="level_ended" from="." to="TransitionMenu" method="_on_Game_level_ended"]
 [connection signal="next_level_requested" from="TransitionMenu" to="." method="_on_TransitionMenu_next_level_requested"]

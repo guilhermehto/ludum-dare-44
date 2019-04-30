@@ -4,9 +4,9 @@
 [ext_resource path="res://levels/spawner/Spawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/TileMap.tscn" type="PackedScene" id=3]
 
-[node name="Level2" instance=ExtResource( 1 )]
-level_time = 120.0
-persons_to_punish = 50
+[node name="Level2" index="0" instance=ExtResource( 1 )]
+level_time = 60.0
+persons_to_punish = 35
 
 [node name="Spawner" parent="Spawners" index="0" instance=ExtResource( 2 )]
 position = Vector2( 35, 35 )
