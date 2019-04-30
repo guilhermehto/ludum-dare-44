@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://persons/Person.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/persons/person-run1.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/persons/person-run2.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/persons/person-run3.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/persons/person-run4.png" type="Texture" id=5]
+[ext_resource path="res://assets/audio/damage.wav" type="AudioStream" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -55,4 +56,7 @@ enabled = true
 cast_to = Vector2( 0, 10 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 

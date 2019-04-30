@@ -5,6 +5,7 @@ signal punished
 
 onready var animation_player : AnimationPlayer = $AnimationPlayer
 onready var animated_sprite : AnimatedSprite = $AnimatedSprite
+onready var audio : AudioStreamPlayer = $AudioStreamPlayer2D
 onready var raycast : RayCast2D = $RayCast2D
 onready var tween : Tween = $Tween
 
@@ -60,6 +61,7 @@ func get_new_target(away_from_player: bool = false):
 
 
 func hit(direction: Vector2, force: float) -> void:
+	audio.play()
 	target = yield(get_new_target(), "completed")
 	move_and_slide(direction * force)
 	GlobalEffects.frame_freeze()

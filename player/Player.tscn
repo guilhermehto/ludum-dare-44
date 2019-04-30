@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/player/player-idle-1.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/sprites/player/player-run-4.png" type="Texture" id=9]
 [ext_resource path="res://weapons/trident/Trident.tscn" type="PackedScene" id=10]
 [ext_resource path="res://player/hook/Hook.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/audio/walk.wav" type="AudioStream" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -42,7 +43,7 @@ script = ExtResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "run"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -67,4 +68,12 @@ damping = 40.0
 scale_amount = 2.0
 scale_amount_curve = SubResource( 3 )
 color_ramp = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -5.0
+
+[node name="StepTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
 

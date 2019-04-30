@@ -3,7 +3,9 @@ class_name Player
 
 onready var hook : Position2D = $Hook
 onready var particles : CPUParticles2D = $Particles
+onready var step_timer : Timer = $StepTimer
 onready var animated_sprite : AnimatedSprite = $AnimatedSprite
+onready var audio : AudioStreamPlayer = $AudioStreamPlayer
 
 export var move_speed := 25.0
 
@@ -37,3 +39,6 @@ func _physics_process(delta: float) -> void:
 	var velocity := motion.normalized() * move_speed
 	if not hook.active:
 		move_and_slide(velocity)
+		if velocity != Vector2.ZERO and step_timer.is_stopped():
+			step_timer.start()
+			audio.play()

@@ -3,6 +3,7 @@ extends Position2D
 onready var tween : Tween = $Tween
 onready var line : Line2D = $Line2D
 onready var raycast : RayCast2D = $RayCast2D
+onready var audio : AudioStreamPlayer = $AudioStreamPlayer
 
 export var margin := 10.0
 export var speed := 350.0
@@ -23,6 +24,7 @@ func _physics_process(delta: float) -> void:
 			var direction := (get_global_mouse_position() - global_position).normalized()
 			raycast.cast_to = direction * 150.0
 			if Input.is_action_just_pressed("hook"):
+				audio.play()
 				hook_to = to_global(raycast.cast_to)
 				line.add_point(Vector2())
 				tween.interpolate_method(line, 
